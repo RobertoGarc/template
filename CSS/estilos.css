@@ -7,12 +7,16 @@
     --main-color:#e0ac00;
     --background-color: #111;
     --content-color:#222;
-    --button:#b08a00;
+    --hover:sepia();
 }
 
 *{
     font-family: 'Lato', sans-serif;
     scroll-behavior: smooth;
+}
+
+*::selection{
+    background-color: var(--main-color);
 }
 
 a{
@@ -33,12 +37,12 @@ h1,h2,a,p{
     text-align: center;
     line-height: 50px;
     transition: all 0.6s ease ;
+    
 }
 
 .button:hover{
-    background-color: var(--button);
     transform: scale(0.9);
-    color:#fff;
+    filter: sepia();
 }
 
 .container{
@@ -62,7 +66,10 @@ h1,h2,a,p{
     font-family: 'Akaya Telivigala', cursive;
     font-size: 30px;
     color: var(--main-color);
-    
+}
+
+.container .header .logo:hover{
+    filter: var(--hover);
 }
 
 .container .header .logo span{
