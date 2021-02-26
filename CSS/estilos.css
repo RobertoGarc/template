@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+/* GENERAL */
+:root{
+    --main-color:#e0ac00;
+    --background-color: #111;
+    --content-color:#222;
+    --button:#b08a00;
+}
+
+*{
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,a,p{
+    color:#fff;
+    margin:0px;
+}
+
+.button{
+    background-color: var(--main-color);
+    color:#000;
+    width: 150px;
+    height: 50px;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.6s ease ;
+}
+
+.button:hover{
+    background-color: var(--button);
+    transform: scale(0.9);
+    color:#fff;
+}
+
+.container{
+    background-color: var(--background-color);
+    max-width: 1600px;
+}
+
+/*HEADER*/
+
+.container .header{
+    background-color: var(--background-color);
+    width: 100%;
+    padding:10px;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.container .header .logo{
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 30px;
+    color: var(--main-color);
+    
+}
+
+.container .header .logo span{
+    font-size: 14px;
+    color: var(--main-color);
+    padding-left: 10px;
+}
+
+.container .header .menu a{
+    padding: 0 14px;
+    transition: color 0.6s ease-out;
+}
+
+.container .header .menu a:hover{
+    color:var(--main-color);
+}
+
+/*BANNER*/
+
+.container .banner{
+    background-image: url("../images/new-york-690868_1920.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+	z-index: 1;
+    background-color:var(--background-color);
+}
+
+.banner:after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:-1;
+}
+
+.container .banner .inner{
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5em;
+    padding:20px ;
+
+}
+
+.container .banner .inner h1{
+    margin: 0px;
+}
+
+
+
+
+
