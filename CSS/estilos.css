@@ -15,6 +15,10 @@
     scroll-behavior: smooth;
 }
 
+body{
+    background-color: var(--background-color);
+}
+
 *::selection{
     background-color: var(--main-color);
 }
@@ -125,6 +129,36 @@ h1,h2,a,p{
 .container .banner .inner h1{
     margin: 0px;
 }
+
+/*MAIN*/
+.container .main{
+
+}
+
+.container .main .main-section{
+    background-color: var(--content-color);
+    margin-bottom: 30px;
+    padding: 50px 20px;
+}
+
+
+
+.container .main .section-1 .main-section-item{
+    display: flex;
+}
+
+.container .main .section-1 .main-section-item:first-child{
+    flex-direction: row-reverse;
+}
+
+.container .main .section-2{
+    display: flex;
+}
+
+.container .main .section-2 .main-section-item img{
+    border-radius: 100%;
+} 
+
 
 
 
