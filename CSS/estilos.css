@@ -35,13 +35,12 @@ h1,h2,a,p{
 .button{
     background-color: var(--main-color);
     color:#000;
-    width: 150px;
-    height: 50px;
+    width: 120px;
+    height: 30px;
     border-radius: 12px;
     text-align: center;
     line-height: 50px;
-    transition: all 0.6s ease ;
-    
+    transition: all 0.6s ease ; 
 }
 
 .button:hover{
@@ -133,23 +132,75 @@ h1,h2,a,p{
     margin: 0px;
 }
 
+.container .banner .inner a{
+    background-color: var(--main-color);
+    color:#000;
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 80px;
+    transition: all 0.4s ease ;
+    -webkit-clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+    clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+}
+
+.container .banner .inner a:hover{
+    transform: scale(0.9);
+    filter: sepia();
+    line-height: 100px;
+}
+
+
 /*MAIN*/
 .container .main{
-
 }
 
 .container .main .main-section{
     background-color: var(--content-color);
-    margin-bottom: 30px;
-    padding: 50px 20px;
+    margin-bottom: 50px;
+    padding: 50px 5%;
+}
+
+.container .main .main-section h2{
+    margin-bottom: 20px ;
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: 5px;
+    transition: all 0.7s ease;
+}
+
+.container .main .main-section h2:hover{
+    display: inline-block;
+    color: var(--main-color);
 }
 
 
 .container .main .section-1 {
     display: grid;
-    grid-gap:20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap:50px;
+    grid-template-columns: repeat(3,minmax(250px,1fr));
+    grid-template-rows: repeat(3,auto);
+    grid-auto-flow: dense;
+    align-items: center;
+}
+
+.container .main .section-1 .item-img {
+    width: 100%;
+    height: 200px;
+    -webkit-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
+    box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
+    border-radius: 15px;
+}
+
+
+
+.container .main .section-1 .item-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
 }
 
 .container .main .section-1 .item-1 {
@@ -167,11 +218,108 @@ h1,h2,a,p{
 .container .main .section-2{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.container .main .section-2 .main-section-item img{
-    border-radius: 100%;
+.container .main .section-2 .section2-item{
+    min-width: 350px;
+    width: 33%;
+    padding:0 3%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.container .main .section-2 .section2-item .item-img{
+    height: 300px;
+    margin-bottom: 40px;
+}
+
+
+.container .main .section-2 .section2-item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;  
+    object-fit: cover;
+    object-position: center;
+    -webkit-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
+    box-shadow: 5px 5px 60px 0px rgba(0,0,0,1);
 } 
+
+.container .main .section-2 .section2-item img:hover{
+    
+    -webkit-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
+    box-shadow: 5px 5px 60px 0px var(--main-color)
+} 
+
+.container .main .form .form-container{
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    justify-content:space-evenly;
+    border-radius: 15px;
+}
+
+.container .main .form .form-container .formulario_contacto{
+    min-width: 300px;
+    flex:1;
+    text-align: center;
+    padding: 0 3%;
+}
+
+.container .main .form .form-container .formulario_contacto .form_input{
+    width: 100%;
+    padding: 15px;
+    margin: 10px;
+    border:none;
+    border-bottom:2px solid var(--main-color);
+    background: transparent;
+    color:#fff;
+}
+
+.container .main .form .form-container .formulario_contacto input[type="submit"]{
+    background-color: var(--main-color);
+    
+    margin-top:40px;
+    width: 30%;
+    border-radius: 12px;
+    border: none;
+    color: #111;
+}
+
+.container .main .form .form-container .formulario_contacto input[type="submit"]:hover{
+    filter: var(--hover);
+    color:black;
+}
+
+.container .main .form .form-container .formulario_contacto input[type="submit"]:focus{
+    transform:scale(1.1);
+    background:var(--main-color);
+}
+
+.container .main .form .form-container .formulario_contacto .form_input:focus{
+    background: linear-gradient(to bottom,transparent,#111);
+    outline: none;
+    border-bottom:2px solid var(--main-color);
+}
+
+.container .main .form .form-container .formulario_contacto textarea{
+    resize: none;
+    min-height: 140px;
+}
+
+.container .main .form .form-container .form_img{
+    width: 30%;
+}
+
+.container .main .form .form-container img{
+    width: 100%;
+}
+
 
 .footer{
     height: 60px;
