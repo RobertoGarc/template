@@ -53,6 +53,12 @@ h1,h2,a,p{
     max-width: 1600px;
 }
 
+.container .header .fas{
+    color:#fff;
+    font-size: 48px;
+    pointer-events: none
+}
+
 /*HEADER*/
 
 .container .header{
@@ -89,8 +95,85 @@ h1,h2,a,p{
     transition: color 0.6s ease-out;
 }
 
+
 .container .header .menu a:hover{
     color:var(--main-color);
+}
+
+.container .header .menu_hamburguesa{
+    position: absolute; 
+    min-height: 48px;
+    right: 0;
+    top: 5px;
+    display: none;
+    z-index: -1; 
+}
+
+.container .header .menu_hamburguesa ul{
+    background-color:var(--background-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+.container .header .menu_hamburguesa a{
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--main-color);
+    max-width: 100%;
+    color: #fff; 
+    margin: 0 10px;
+}
+
+.container .header .menu_hamburguesa a:hover{
+    display: inline-block;
+}
+
+.container .header .menu_hamburguesa nav{
+    position: relative; 
+    top:50px;
+    padding: 0;
+}
+
+.container .header .menu_hamburguesa nav ul{
+    padding: 1em 0;
+}
+
+.container .header .menu_hamburguesa nav ul li{
+    padding: 1em;
+}
+
+
+
+.container .header .menu_hamburguesa input[type="checkbox"], .container .header .fas {
+    position: absolute;  
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;  
+}
+
+.container .header .menu_hamburguesa input[type="checkbox"] {
+    opacity: 0; 
+}
+
+.menu_hamburguesa nav {
+    display: none;
+}
+  
+.container .header .menu_hamburguesa input:checked ~ nav {
+    display: block;
+}
+   
+.container .header .menu_hamburguesa input:checked ~ .fa-bars {
+    display: none;
+}
+   
+.container .header .menu_hamburguesa input:not(:checked) ~ .fa-times {
+    display: none;
 }
 
 /*BANNER*/
@@ -102,7 +185,7 @@ h1,h2,a,p{
     background-size: cover;
     height: 500px;
     position: relative;
-	z-index: 1;
+	z-index: 70;
     background-color:var(--background-color);
 }
 
@@ -132,6 +215,10 @@ h1,h2,a,p{
     margin: 0px;
 }
 
+.container .banner .inner h2{
+    text-align: center;
+}
+
 .container .banner .inner a{
     background-color: var(--main-color);
     color:#000;
@@ -143,6 +230,12 @@ h1,h2,a,p{
     transition: all 0.4s ease ;
     -webkit-clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
     clip-path: polygon(50% 25%, 100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
+}
+
+.container .banner .inner .fas{
+    color: #000;
+    margin: 0;
+    padding: 0;
 }
 
 .container .banner .inner a:hover{
@@ -178,7 +271,7 @@ h1,h2,a,p{
 .container .main .section-1 {
     display: grid;
     grid-gap:50px;
-    grid-template-columns: repeat(3,minmax(250px,1fr));
+    grid-template-columns: repeat(3,minmax(200px,1fr));
     grid-template-rows: repeat(3,auto);
     grid-auto-flow: dense;
     align-items: center;
@@ -187,6 +280,7 @@ h1,h2,a,p{
 .container .main .section-1 .item-img {
     width: 100%;
     height: 200px;
+    min-width: 200px;
     -webkit-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
     -moz-box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
     box-shadow: 2px 2px 56px 0px rgba(0,0,0,1);
@@ -233,12 +327,16 @@ h1,h2,a,p{
 .container .main .section-2 .section2-item .item-img{
     height: 300px;
     margin-bottom: 40px;
+    width: 300px;
+    display: inline-block;
 }
 
 
 .container .main .section-2 .section2-item img{
     width: 100%;
     height: 100%;
+    
+
     border-radius: 100%;  
     object-fit: cover;
     object-position: center;
@@ -268,7 +366,7 @@ h1,h2,a,p{
     min-width: 300px;
     flex:1;
     text-align: center;
-    padding: 0 3%;
+    padding: 0 8% 0 0;
 }
 
 .container .main .form .form-container .formulario_contacto .form_input{
@@ -314,10 +412,12 @@ h1,h2,a,p{
 
 .container .main .form .form-container .form_img{
     width: 30%;
+    padding: 10px;
 }
 
 .container .main .form .form-container img{
     width: 100%;
+    
 }
 
 
@@ -329,6 +429,7 @@ h1,h2,a,p{
     bottom: 0;
     display:flex;
     justify-content: center;
+    z-index: 80;
 }
 
 .footer .social{
@@ -347,9 +448,47 @@ h1,h2,a,p{
     color:var(--hover);
 }
 
+@media screen and (max-width: 768px) {
+    .container .header .menu_hamburguesa{
+        display: block;
+    }
+    .container .header .menu .menu_horizontal{
+        display: none;
+    }
 
+    .container .main .section-1{
+        display: block;
+    }
 
+    .container .main .section-1 .item-img {
+        height: 300px;
+        margin: 30px 0 50px 0;
+    }
 
+    .container .main .form .form-container .form_img{
+        width: 70%;
+        padding: 10px;
+    }
 
+    .container .main .section-2 .section2-item{
+        width: 70%;
+    }
+
+    
+    
+}
+@media screen and (max-width: 576px) { 
+    .container .header .logo span{
+        display: block;
+        text-align: center;
+    }
+
+    .container .header .menu_hamburguesa{
+        display: block;
+    }
+
+    
+    
+}
 
 
